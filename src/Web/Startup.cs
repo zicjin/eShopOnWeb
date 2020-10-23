@@ -104,7 +104,13 @@ namespace Microsoft.eShopWeb.Web
                     options.Cookie.HttpOnly = true;
                     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
                     options.Cookie.SameSite = SameSiteMode.Lax;
+                })
+                .AddGitHub(options =>
+                {
+                    options.ClientId = "284af3db029e177e884b";
+                    options.ClientSecret = "595419a32d6aad553412087b6e707412ce5b8654";
                 });
+            ;
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                        .AddDefaultUI()
