@@ -111,3 +111,13 @@ You can also run the applications by using the instructions located in their `Do
 We have some great contributions from the community, and while these aren't maintained by Microsoft we still want to highlight them.
 
 [eShopOnWeb VB.NET](https://github.com/VBAndCs/eShopOnWeb_VB.NET) by Mohammad Hamdy Ghanem
+
+
+## Database Migrations/Update
+```
+dotnet ef migrations add Initial -p .\src\Infrastructure\Infrastructure.csproj -c CatalogContext -s .\src\Web\Web.csproj -o Data\Migrations
+dotnet ef database update -p .\src\Infrastructure\Infrastructure.csproj -c CatalogContext -s .\src\Web\Web.csproj
+
+dotnet ef migrations add Initial -p .\src\Infrastructure\Infrastructure.csproj -c AppIdentityDbContext -s .\src\Web\Web.csproj -o Identity\Migrations
+dotnet ef database update -p .\src\Infrastructure\Infrastructure.csproj -c AppIdentityDbContext -s .\src\Web\Web.csproj
+```
